@@ -171,7 +171,7 @@ const Navbar = () => {
                                     backgroundColor: btnHoverBg,
                                     color: btnHoverColor,
                                     border: '1px solid var(--primary)',
-                                    boxShadow: '0 5px 15px rgba(197, 160, 89, 0.4)'
+                                    boxShadow: '0 5px 15px rgba(181, 131, 131, 0.4)'
                                 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="btn"

@@ -8,7 +8,8 @@ const Footer = () => {
         backgroundColor: '#111',
         color: 'var(--white)',
         padding: '80px 0 20px',
-        borderTop: '5px solid var(--primary)'
+        borderTop: '5px solid var(--primary)',
+        textAlign: 'center'
     };
 
     const columnStyle = {
@@ -43,7 +44,6 @@ const Footer = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: '15px',
         color: 'var(--white)',
         cursor: 'pointer'
     };
@@ -59,7 +59,7 @@ const Footer = () => {
 
     return (
         <footer style={footerStyle}>
-            <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', margin: '0 -20px' }}>
+            <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', margin: '0 auto', gap: '40px' }}>
 
                 {/* Brand Column */}
                 <div style={columnStyle}>
@@ -70,7 +70,7 @@ const Footer = () => {
                         Centre of Excellence for Cosmetic Gynecology. <br />
                         Empowering women through science, art, and compassionate care.
                     </p>
-                    <div style={{ display: 'flex' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '15px' }}>
                         {socialLinks.map((social) => (
                             <motion.div
                                 key={social.key}
@@ -108,19 +108,19 @@ const Footer = () => {
                 {/* Contact Column */}
                 <div style={columnStyle}>
                     <h4 style={headingStyle}>Contact Us</h4>
-                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex' }}>
+                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaMapMarkerAlt /></span>
                         123 Wellness Ave, Beauty City, India
                     </p>
-                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex' }}>
+                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaPhoneAlt /></span>
                         +91 98765 43210
                     </p>
-                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex' }}>
+                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaEnvelope /></span>
                         info@nyssaclinic.com
                     </p>
-                    <p style={{ color: '#aaa', display: 'flex' }}>
+                    <p style={{ color: '#aaa', display: 'flex', justifyContent: 'center' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaClock /></span>
                         Mon - Sat: 10:00 AM - 7:00 PM
                     </p>
@@ -134,14 +134,16 @@ const Footer = () => {
                 paddingTop: '25px',
                 display: 'flex',
                 justifyContent: 'space-between',
+                alignItems: 'center',
                 flexWrap: 'wrap',
+                gap: '20px',
                 color: '#666',
                 fontSize: '0.9rem'
             }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', textAlign: 'left' }}>
                     <p>&copy; {new Date().getFullYear()} Nyssa Clinic. All rights reserved.</p>
                     <p style={{ opacity: 0.8 }}>
-                        Designed By <motion.a
+                        Designed & Developed by <motion.a
                             href="https://digisahyadri.com"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -152,10 +154,9 @@ const Footer = () => {
                         </motion.a>
                     </p>
                 </div>
-                <div style={{ display: 'flex', gap: '20px' }}>
+                <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                     <span>Terms of Service</span>
                     <span>Privacy Policy</span>
-                    <span>Sitemap</span>
                 </div>
             </div>
         </footer>

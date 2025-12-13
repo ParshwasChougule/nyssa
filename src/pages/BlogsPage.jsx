@@ -33,7 +33,7 @@ const BlogsPage = () => {
         <div style={{ paddingTop: '100px' }}>
             {/* Hero Section */}
             <div style={{
-                backgroundColor: '#FCF8ED',
+                backgroundColor: '#c99d99',
                 color: 'var(--secondary)',
                 padding: '80px 0',
                 textAlign: 'center',

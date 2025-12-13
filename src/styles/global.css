@@ -67,7 +67,7 @@ img {
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--primary);
     transform: translateY(-2px);
 }
 

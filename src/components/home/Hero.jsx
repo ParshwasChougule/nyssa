@@ -103,7 +103,7 @@ const Hero = () => {
                     <Link to="/contact">
                         <motion.button
                             className="btn"
-                            whileHover={{ scale: 1.05, backgroundColor: 'var(--primary-light)' }}
+                            whileHover={{ scale: 1.05, backgroundColor: 'var(--primary)' }}
                             whileTap={{ scale: 0.95 }}
                             style={{
                                 backgroundColor: 'var(--white)',

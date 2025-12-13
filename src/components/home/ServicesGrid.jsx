@@ -3,76 +3,113 @@ import { motion } from 'framer-motion';
 import CardSoft from '../ui/CardSoft';
 import SectionTitle from '../common/SectionTitle';
 import {
-    FaCompressArrowsAlt,
-    FaSpa,
-    FaUserMd,
-    FaDna,
-    FaBriefcaseMedical,
-    FaTint,
-    FaRunning,
-    FaClock,
-    FaChild,
     FaFemale,
-    FaHandHoldingMedical,
-    FaSyringe
+    FaTint,
+    FaNotesMedical,
+    FaSpa,
+    FaGem,
+    FaHeart,
+    FaRunning,
+    FaCheck
 } from 'react-icons/fa';
 
 const ServicesGrid = () => {
-    const services = [
+    const [hoveredIndex, setHoveredIndex] = React.useState(null);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const categories = [
         {
-            title: 'Vaginal Tightening',
-            desc: 'Non-surgical solutions for improved tightness and sensation.',
-            icon: <FaCompressArrowsAlt size={35} color="var(--primary)" />
+            title: 'Vulvovaginal Conditions',
+            icon: <FaFemale size={30} color="var(--primary)" />,
+            items: [
+                'Vaginal tightening for Laxity',
+                'Vaginal tissue hydration & Lubrication',
+                'Vaginismus (Painful touch)',
+                'Vaginal Rejuvenation post child birth',
+                'Post menopausal Vaginal atrophy',
+                'Genito Urinary syndrome of Menopause',
+                'Vulvo Vaginal Lichen Sclerosus',
+                'PRP Therapy',
+                'Plasmaporation'
+            ]
         },
         {
-            title: 'Vaginal Rejuvenation',
-            desc: 'Revitalize and restore natural function with advanced care.',
-            icon: <FaSpa size={35} color="var(--primary)" />
+            title: 'Urinary Conditions',
+            icon: <FaTint size={30} color="var(--primary)" />,
+            items: [
+                'Urge Incontinence (Bladder Oversensitivity)',
+                'Mild to Moderate Stress Incontinence',
+                'Voiding Dysfunction'
+            ]
         },
         {
-            title: 'Cervical Rejuvenation',
-            desc: 'Specialized treatments for cervical health and wellness.',
-            icon: <FaUserMd size={35} color="var(--primary)" />
+            title: 'Cervical Conditions',
+            icon: <FaNotesMedical size={30} color="var(--primary)" />,
+            items: [
+                'Cervical Erosion (Ectopy)',
+                'Cervical HPV Infections',
+                'Cervical Discharges & Infections',
+                'Cervical Rejuvenation'
+            ]
         },
         {
-            title: 'Exosome Therapy',
-            desc: 'Regenerative therapy using exosomes for tissue repair.',
-            icon: <FaDna size={35} color="var(--primary)" />
+            title: 'Feminine Rejuvenation',
+            icon: <FaSpa size={30} color="var(--primary)" />,
+            items: [
+                'Vulval Rejuvenation',
+                'Vaginal Rejuvenation',
+                'Cervical Rejuvenation',
+                'Sexual Rejuvenation'
+            ]
         },
         {
-            title: 'Cervical Erosion',
-            desc: 'Effective treatment for cervical erosion and discomfort.',
-            icon: <FaBriefcaseMedical size={35} color="var(--primary)" />
+            title: 'Cosmetic Procedures',
+            icon: <FaGem size={30} color="var(--primary)" />,
+            items: [
+                'Mommy Makeover',
+                'Vulval Fillers',
+                'Labial Firming & Lifting',
+                'Labial Fillers',
+                'Intimate Bleaching'
+            ]
         },
         {
-            title: 'Urinary Incontinence',
-            desc: 'Comprehensive solutions for bladder control and confidence.',
-            icon: <FaTint size={35} color="var(--primary)" />
-        },
-        {
-            title: 'Stress Urinary Incontinence (SUI)',
-            desc: 'Treat leaks during physical activity like coughing or sneezing.',
-            icon: <FaRunning size={35} color="var(--primary)" />
-        },
-        {
-            title: 'Urge Incontinence',
-            desc: 'Manage sudden, intense urges to urinate.',
-            icon: <FaClock size={35} color="var(--primary)" />
+            title: 'Sexual Rejuvenation',
+            icon: <FaHeart size={30} color="var(--primary)" />,
+            items: [
+                'Kamasutra Shot',
+                'O-Shot',
+                'G-Shot',
+                'Hydration IV Drip'
+            ]
         },
         {
             title: 'Pelvic Floor Rehabilitation',
-            desc: 'Strengthen and restore pelvic floor muscles.',
-            icon: <FaFemale size={35} color="var(--primary)" />
-        },
-        {
-            title: 'Lichen Sclerosus',
-            desc: 'Specialized care for this chronic skin condition.',
-            icon: <FaHandHoldingMedical size={35} color="var(--primary)" />
-        },
-        {
-            title: 'Kama Sutra Shot | PRP Therapy',
-            desc: 'Platelet-Rich Plasma therapy for enhanced sensitivity.',
-            icon: <FaSyringe size={35} color="var(--primary)" />
+            icon: <FaRunning size={30} color="var(--primary)" />,
+            items: [
+                'Bladder Oversensitivity',
+                'Voiding Dysfunction',
+                'Detrusor Overactivity',
+                'Stress Urinary Incontinence',
+                'Recurrent UTI',
+                'Dyspareunia (Painful Coitus)',
+                'Perineal & Pelvic Pain',
+                'Vaginal Laxity',
+                'Lower Abdominal Wall Laxity',
+                '1st Degree Pelvic Organ Prolapse',
+                'Anal Incontinence'
+            ]
         }
     ];
 
@@ -98,7 +135,7 @@ const ServicesGrid = () => {
     return (
         <section className="section" style={{ backgroundColor: 'transparent' }}>
             <div className="container">
-                <SectionTitle title="Our Expertise" subtitle="Specialized Care" />
+                <SectionTitle title="Comprehensive Care" subtitle="Our Specialized Services" />
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -106,41 +143,99 @@ const ServicesGrid = () => {
                     viewport={{ once: true, amount: 0.1 }}
                     style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                        gap: '30px'
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                        gap: '30px',
+                        alignItems: 'start'
                     }}
                 >
-                    {services.map((service, index) => (
-                        <motion.div variants={itemVariants} key={index} style={{ height: '100%' }}>
+                    {categories.map((category, index) => (
+                        <motion.div
+                            variants={itemVariants}
+                            key={index}
+                            style={{ height: 'auto' }}
+                            onMouseEnter={() => !isMobile && setHoveredIndex(index)}
+                            onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+                            onClick={() => isMobile && setHoveredIndex(hoveredIndex === index ? null : index)}
+                        >
                             <CardSoft style={{
-                                padding: '40px 30px',
-                                textAlign: 'center',
-                                border: '1px solid var(--primary)',
-                                borderRadius: '20px',
-                                height: '100%',
+                                padding: '40px',
+                                border: '1px solid rgba(181, 131, 131, 0.2)',
+                                borderRadius: '24px',
+                                height: 'auto', // Changed from 100% to auto
+                                minHeight: '160px', // Just enough for icon + title
+                                backgroundColor: 'var(--white)',
+                                transition: 'all 0.3s ease',
+                                position: 'relative',
+                                overflow: 'hidden',
                                 display: 'flex',
                                 flexDirection: 'column',
-                                alignItems: 'center',
-                                backgroundColor: 'var(--white)',
-                                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                                justifyContent: 'center' // Center vertically when collapsed
                             }}
-                                whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                                whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(181, 131, 131, 0.15)' }}
                             >
                                 <div style={{
-                                    marginBottom: '25px',
-                                    background: '#FFF0F5', // Light pink background
-                                    width: '90px',
-                                    height: '90px',
-                                    borderRadius: '50%',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center',
-                                    boxShadow: 'inset 0 0 20px rgba(212, 140, 149, 0.2)'
+                                    marginBottom: hoveredIndex === index ? '25px' : '0', // Adjust margin
+                                    borderBottom: hoveredIndex === index ? '1px solid rgba(181, 131, 131, 0.1)' : 'none',
+                                    paddingBottom: hoveredIndex === index ? '20px' : '0',
+                                    transition: 'all 0.3s ease'
                                 }}>
-                                    {service.icon}
+                                    <div style={{
+                                        marginRight: '20px',
+                                        background: 'rgba(181, 131, 131, 0.08)',
+                                        width: '60px',
+                                        height: '60px',
+                                        borderRadius: '16px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        flexShrink: 0
+                                    }}>
+                                        {category.icon}
+                                    </div>
+                                    <h3 style={{
+                                        fontFamily: 'var(--font-heading)',
+                                        fontSize: '1.5rem',
+                                        color: 'var(--secondary)',
+                                        margin: 0
+                                    }}>
+                                        {category.title}
+                                    </h3>
                                 </div>
-                                <h3 style={{ marginBottom: '15px', fontFamily: 'var(--font-heading)', fontSize: '1.4rem', color: 'var(--secondary)' }}>{service.title}</h3>
-                                <p style={{ color: 'var(--text-light)', lineHeight: '1.6', fontSize: '0.95rem' }}>{service.desc}</p>
+
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{
+                                        height: hoveredIndex === index ? 'auto' : 0,
+                                        opacity: hoveredIndex === index ? 1 : 0
+                                    }}
+                                    transition={{ duration: 0.3 }}
+                                    style={{ overflow: 'hidden' }}
+                                >
+                                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                                        {category.items.map((item, idx) => (
+                                            <li key={idx} style={{
+                                                marginBottom: '12px',
+                                                display: 'flex',
+                                                alignItems: 'flex-start',
+                                                fontSize: '0.95rem',
+                                                color: 'var(--text-light)',
+                                                lineHeight: '1.5'
+                                            }}>
+                                                <span style={{
+                                                    color: 'var(--primary)',
+                                                    marginRight: '12px',
+                                                    marginTop: '4px',
+                                                    fontSize: '0.8rem'
+                                                }}>
+                                                    <FaCheck />
+                                                </span>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
                             </CardSoft>
                         </motion.div>
                     ))}

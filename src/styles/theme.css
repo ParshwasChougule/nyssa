@@ -1,8 +1,8 @@
 :root {
-    --primary: #c5a059;
-    /* Richer Gold */
-    --primary-light: #ebdcb2;
-    --primary-dark: #8c7335;
+    --primary: #B58383;
+    /* Muted Rose */
+    --primary-light: #D6A8A8;
+    --primary-dark: #8E5E5E;
 
     --secondary: #1a1a1a;
     /* Deep Black/Charcoal */
@@ -29,7 +29,7 @@
     --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.03);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 20px rgba(197, 160, 89, 0.3);
+    --shadow-glow: 0 0 20px rgba(181, 131, 131, 0.3);
 
     --radius-sm: 4px;
     --radius-md: 12px;
@@ -43,7 +43,7 @@
 
 body {
     background-color: var(--background);
-    background-image: radial-gradient(circle at 10% 20%, rgba(235, 220, 178, 0.1) 0%, transparent 20%),
+    background-image: radial-gradient(circle at 10% 20%, rgba(214, 168, 168, 0.1) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, rgba(212, 140, 149, 0.05) 0%, transparent 20%);
     background-attachment: fixed;
 }
