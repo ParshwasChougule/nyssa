@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Hero from '../components/home/Hero';
 import CentreOfExcellence from '../components/home/CentreOfExcellence';
 
@@ -19,9 +20,20 @@ import InspirationAndBlog from '../components/home/InspirationAndBlog';
 import ImageMarquee from '../components/home/ImageMarquee';
 
 const Home = () => {
+    const location = useLocation();
+
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [location]);
 
     return (
         <>

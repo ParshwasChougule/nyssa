@@ -162,7 +162,7 @@ const Navbar = () => {
                             );
                         })}
 
-                        <Link to="/contact" style={{ textDecoration: 'none' }}>
+                        <Link to="/#book-appointment" style={{ textDecoration: 'none' }}>
                             <motion.div
                                 initial={{ backgroundColor: btnBg, color: btnColor, border: btnBorder }}
                                 animate={{ backgroundColor: btnBg, color: btnColor, border: btnBorder }}
@@ -191,7 +191,7 @@ const Navbar = () => {
                                     transition: 'all 0.3s ease'
                                 }}
                             >
-                                Book Now
+                                Book Appointment
                             </motion.div>
                         </Link>
                     </div>
@@ -241,7 +241,7 @@ const Navbar = () => {
                             </Link>
                         );
                     })}
-                    <Link to="/contact" onClick={() => setMobileMenuOpen(false)} style={{ marginTop: '30px' }}>
+                    <Link to="/#book-appointment" onClick={() => setMobileMenuOpen(false)} style={{ marginTop: '30px' }}>
                         <button style={{
                             backgroundColor: 'var(--primary)',
                             color: 'var(--white)',

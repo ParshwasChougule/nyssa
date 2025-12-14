@@ -100,7 +100,7 @@ const Hero = () => {
                 </motion.p>
 
                 <motion.div className="hero-buttons" variants={itemVariants} style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                    <Link to="/contact">
+                    <Link to="/#book-appointment">
                         <motion.button
                             className="btn"
                             whileHover={{ scale: 1.05, backgroundColor: 'var(--primary)' }}

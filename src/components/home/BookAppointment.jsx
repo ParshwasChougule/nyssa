@@ -2,6 +2,47 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const BookAppointment = () => {
+    const [formData, setFormData] = React.useState({
+        name: '',
+        phone: '',
+        email: '',
+        maritalStatus: '',
+        country: '',
+        city: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { name, phone, email, maritalStatus, country, city, message } = formData;
+
+        const whatsappMessage = `*New Appointment Request*\n\n` +
+            `*Name:* ${name}\n` +
+            `*Phone:* ${phone}\n` +
+            `*Email:* ${email}\n` +
+            `*Marital Status:* ${maritalStatus}\n` +
+            `*Country:* ${country}\n` +
+            `*City:* ${city}\n` +
+            `*Message:* ${message}`;
+
+        const whatsappUrl = `https://wa.me/918149923900?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappUrl, '_blank');
+
+        setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            maritalStatus: '',
+            country: '',
+            city: '',
+            message: ''
+        });
+    };
+
     const inputStyle = {
         width: '100%',
         padding: '15px',
@@ -22,7 +63,7 @@ const BookAppointment = () => {
     };
 
     return (
-        <section className="section" style={{
+        <section className="section" id="book-appointment" style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -90,57 +131,81 @@ const BookAppointment = () => {
                             We look forward to understanding the enhancement you desire and making your dreams a reality.
                         </p>
 
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="appointment-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                                 <input
                                     type="text"
+                                    name="name"
                                     placeholder="Name*"
                                     style={inputStyle}
                                     onFocus={focusStyle}
                                     onBlur={blurStyle}
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
                                 />
                                 <input
                                     type="tel"
+                                    name="phone"
                                     placeholder="Phone*"
                                     style={inputStyle}
                                     onFocus={focusStyle}
                                     onBlur={blurStyle}
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    required
                                 />
                                 <input
                                     type="email"
+                                    name="email"
                                     placeholder="E-mail*"
                                     style={inputStyle}
                                     onFocus={focusStyle}
                                     onBlur={blurStyle}
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
                                 />
                                 <input
                                     type="text"
+                                    name="maritalStatus"
                                     placeholder="Marital Status*"
                                     style={inputStyle}
                                     onFocus={focusStyle}
                                     onBlur={blurStyle}
+                                    value={formData.maritalStatus}
+                                    onChange={handleChange}
                                 />
                                 <input
                                     type="text"
+                                    name="country"
                                     placeholder="Your Country*"
                                     style={inputStyle}
                                     onFocus={focusStyle}
                                     onBlur={blurStyle}
+                                    value={formData.country}
+                                    onChange={handleChange}
                                 />
                                 <input
                                     type="text"
+                                    name="city"
                                     placeholder="City*"
                                     style={inputStyle}
                                     onFocus={focusStyle}
                                     onBlur={blurStyle}
+                                    value={formData.city}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <textarea
+                                name="message"
                                 placeholder="Your Message"
                                 rows="4"
                                 style={{ ...inputStyle, width: '100%', marginBottom: '30px', resize: 'none' }}
                                 onFocus={focusStyle}
                                 onBlur={blurStyle}
+                                value={formData.message}
+                                onChange={handleChange}
                             ></textarea>
 
                             <button type="submit" style={{
@@ -157,7 +222,7 @@ const BookAppointment = () => {
                                 onMouseOver={(e) => { e.target.style.backgroundColor = 'var(--secondary)'; e.target.style.color = 'var(--white)'; }}
                                 onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--secondary)'; }}
                             >
-                                Send Enquiry
+                                Submit Form
                             </button>
                         </form>
                     </motion.div>
