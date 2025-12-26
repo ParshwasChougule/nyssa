@@ -9,61 +9,56 @@ const MeetSurgeon = () => {
                     <div style={{ flex: 1, minWidth: '300px', position: 'relative' }}>
                         <div style={{
                             position: 'absolute',
-                            top: '-20px',
-                            left: '-20px',
+                            top: '0',
+                            left: '0',
                             width: '100%',
                             height: '100%',
-                            border: '2px solid var(--primary)',
+                            backgroundColor: '#D1A3A2',
+                            borderRadius: '12px',
                             zIndex: 0
                         }}></div>
                         <img
-                            src="https://images.unsplash.com/photo-1559839734-2b71ea86b48e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                            alt="Dr. Surgeon"
+                            src="/monica kullolli.png"
+                            alt="Nyssa Healthcare"
                             style={{
                                 width: '100%',
                                 position: 'relative',
                                 zIndex: 1,
-                                boxShadow: 'var(--shadow-lg)'
+                                boxShadow: 'var(--shadow-lg)',
+                                borderRadius: '12px'
                             }}
                         />
                     </div>
                     <div style={{ flex: 1.2, minWidth: '300px' }}>
-                        <span style={{
-                            color: 'var(--primary)',
-                            fontWeight: '700',
-                            letterSpacing: '2px',
-                            textTransform: 'uppercase',
-                            marginBottom: '10px',
-                            display: 'block'
-                        }}>
-                            Founder & Chief Surgeon
-                        </span>
                         <h2 style={{
-                            fontSize: 'clamp(2rem, 5vw, 2.5rem)',
-                            marginBottom: '25px',
+                            fontSize: 'clamp(2rem, 5vw, 2.8rem)',
+                            marginBottom: '30px',
                             fontFamily: 'var(--font-heading)',
-                            color: 'var(--secondary)'
+                            color: 'var(--secondary)',
+                            lineHeight: '1.2'
                         }}>
-                            Meet Dr. Monica Kullolli
+                            Nyssa was created with a simple belief — healthcare should feel safe, respectful, and personal.
                         </h2>
-                        <p style={{ marginBottom: '20px', color: 'var(--text-light)', fontSize: '1.1rem' }}>
-                            A pioneer in cosmetic gynecology and aesthetic medicine, Dr. Monica Kullolli brings over 25 years of surgical excellence. Dedicated to empowering women, she combines artistic vision with medical precision to deliver results that look and feel natural.
+                        <p style={{ marginBottom: '25px', color: 'var(--text-light)', fontSize: '1.15rem', lineHeight: '1.8' }}>
+                            Many people delay treatment because they feel embarrassed, unsure, or uncomfortable. Nyssa exists to change that experience.
                         </p>
-                        <p style={{ marginBottom: '30px', color: 'var(--text-light)', fontSize: '1.1rem' }}>
-                            "My mission is to help every woman regain her confidence and feel comfortable in her own skin."
-                        </p>
-                        <div style={{ display: 'flex', gap: '40px', marginBottom: '30px' }}>
-                            <div>
-                                <h4 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', color: 'var(--primary)', marginBottom: '5px' }}>25+</h4>
-                                <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', color: '#999' }}>Years Exp.</span>
-                            </div>
-                            <div>
-                                <h4 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', color: 'var(--primary)', marginBottom: '5px' }}>5k+</h4>
-                                <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', color: '#999' }}>Procedures</span>
-                            </div>
+                        <div style={{
+                            marginBottom: '30px',
+                            paddingLeft: '20px',
+                            borderLeft: '3px solid var(--primary)'
+                        }}>
+                            <p style={{ marginBottom: '12px', color: 'var(--secondary)', fontSize: '1.1rem', fontWeight: '500' }}>
+                                Here, you don't need perfect words.
+                            </p>
+                            <p style={{ marginBottom: '12px', color: 'var(--secondary)', fontSize: '1.1rem', fontWeight: '500' }}>
+                                You don't need explanations.
+                            </p>
+                            <p style={{ marginBottom: '0', color: 'var(--secondary)', fontSize: '1.1rem', fontWeight: '500' }}>
+                                You just need to feel safe.
+                            </p>
                         </div>
                         <Link to="/about" className="btn btn-outline">
-                            Read Full Profile
+                            Learn More About Nyssa
                         </Link>
                     </div>
                 </div>

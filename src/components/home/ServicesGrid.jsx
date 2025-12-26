@@ -10,7 +10,19 @@ import {
     FaGem,
     FaHeart,
     FaRunning,
-    FaCheck
+    FaCheck,
+    FaBacteria,
+    FaPalette,
+    FaUserMd,
+    FaCut,
+    FaStethoscope,
+    FaMicroscope,
+    FaBolt,
+    FaFlask,
+    FaSyringe,
+    FaMagic,
+    FaVenusMars,
+    FaVenus
 } from 'react-icons/fa';
 
 const ServicesGrid = () => {
@@ -29,86 +41,198 @@ const ServicesGrid = () => {
     }, []);
 
     const categories = [
+        // A. MEDICAL DERMATOLOGY
+        {
+            title: 'Skin Infections & Medical Conditions',
+            icon: <FaBacteria size={30} color="var(--primary)" />,
+            items: [
+                'Fungal infections',
+                'Psoriasis',
+                'Eczema',
+                'Lichen planus',
+                'Bullous disorders',
+                'Bacterial & viral infections',
+                'Leprosy',
+                'Sexually Transmitted Diseases (STDs)'
+            ]
+        },
+        {
+            title: 'Pigmentation & Skin Brightening',
+            icon: <FaPalette size={30} color="var(--primary)" />,
+            items: [
+                'Melasma',
+                'Vitiligo',
+                'Dark circles',
+                'Uneven skin tone',
+                'Hyperpigmentation'
+            ]
+        },
+        {
+            title: 'Acne & Scar Management',
+            icon: <FaUserMd size={30} color="var(--primary)" />,
+            items: [
+                'Acne treatment',
+                'Acne scar treatment',
+                'Nodulocystic acne',
+                'Scar revision',
+                'Microneedling',
+                'Microneedling with iPRF'
+            ]
+        },
+        {
+            title: 'Hair & Scalp Treatments',
+            icon: <FaCut size={30} color="var(--primary)" />,
+            items: [
+                'PRP therapy for hair',
+                'Alopecia areata treatment'
+            ]
+        },
+        {
+            title: 'Skin Growth & Lesion Removal',
+            icon: <FaStethoscope size={30} color="var(--primary)" />,
+            items: [
+                'Skin tags',
+                'DPN',
+                'Warts',
+                'Molluscum',
+                'Milia',
+                'Sebaceous cyst',
+                'Mole removal'
+            ]
+        },
+        {
+            title: 'Advanced Dermatology',
+            icon: <FaMicroscope size={30} color="var(--primary)" />,
+            items: [
+                'Intralesional steroid therapy (ILS)',
+                'Dermoscopy',
+                'Skin biopsy'
+            ]
+        },
+        {
+            title: 'Laser & Energy-Based Treatments',
+            icon: <FaBolt size={30} color="var(--primary)" />,
+            items: [
+                'CO2 Laser',
+                'Nd:YAG Laser',
+                'Fractional Laser',
+                'Diode Laser',
+                'IPL',
+                'Tattoo removal'
+            ]
+        },
+
+        // B. AESTHETIC & COSMETIC DERMATOLOGY
+        {
+            title: 'Chemical Peels',
+            icon: <FaFlask size={30} color="var(--primary)" />,
+            items: [
+                'Glycolic peel',
+                'Salicylic peel',
+                'TCA peel',
+                'Yellow peel',
+                'No-melan peel'
+            ]
+        },
+        {
+            title: 'Injectables & Aesthetics',
+            icon: <FaSyringe size={30} color="var(--primary)" />,
+            items: [
+                'Botox',
+                'Fillers',
+                'Skin boosters'
+            ]
+        },
+        {
+            title: 'Skin Rejuvenation',
+            icon: <FaMagic size={30} color="var(--primary)" />,
+            items: [
+                'PRP with Dermapen',
+                'Anti-aging therapies'
+            ]
+        },
+        {
+            title: 'Hair Restoration',
+            icon: <FaCut size={30} color="var(--primary)" />,
+            items: [
+                'PRP hair therapy',
+                'Hair transplant'
+            ]
+        },
+
+        // C. VULVOVAGINAL & INTIMATE HEALTH
         {
             title: 'Vulvovaginal Conditions',
             icon: <FaFemale size={30} color="var(--primary)" />,
             items: [
-                'Vaginal tightening for Laxity',
-                'Vaginal tissue hydration & Lubrication',
-                'Vaginismus (Painful touch)',
-                'Vaginal Rejuvenation post child birth',
-                'Post menopausal Vaginal atrophy',
-                'Genito Urinary syndrome of Menopause',
-                'Vulvo Vaginal Lichen Sclerosus',
-                'PRP Therapy',
-                'Plasmaporation'
-            ]
-        },
-        {
-            title: 'Urinary Conditions',
-            icon: <FaTint size={30} color="var(--primary)" />,
-            items: [
-                'Urge Incontinence (Bladder Oversensitivity)',
-                'Mild to Moderate Stress Incontinence',
-                'Voiding Dysfunction'
+                'Vaginal laxity',
+                'Vaginal dryness',
+                'Vaginismus',
+                'Post childbirth rejuvenation',
+                'Post menopausal atrophy',
+                'Lichen sclerosus'
             ]
         },
         {
             title: 'Cervical Conditions',
             icon: <FaNotesMedical size={30} color="var(--primary)" />,
             items: [
-                'Cervical Erosion (Ectopy)',
-                'Cervical HPV Infections',
-                'Cervical Discharges & Infections',
-                'Cervical Rejuvenation'
+                'Cervical erosion',
+                'Cervical ectopy',
+                'HPV infections',
+                'Cervical infections',
+                'Cervical rejuvenation'
             ]
         },
         {
-            title: 'Feminine Rejuvenation',
-            icon: <FaSpa size={30} color="var(--primary)" />,
+            title: 'Urinary Conditions',
+            icon: <FaTint size={30} color="var(--primary)" />,
             items: [
-                'Vulval Rejuvenation',
-                'Vaginal Rejuvenation',
-                'Cervical Rejuvenation',
-                'Sexual Rejuvenation'
+                'Urge incontinence',
+                'Stress incontinence'
             ]
         },
-        {
-            title: 'Cosmetic Procedures',
-            icon: <FaGem size={30} color="var(--primary)" />,
-            items: [
-                'Mommy Makeover',
-                'Vulval Fillers',
-                'Labial Firming & Lifting',
-                'Labial Fillers',
-                'Intimate Bleaching'
-            ]
-        },
-        {
-            title: 'Sexual Rejuvenation',
-            icon: <FaHeart size={30} color="var(--primary)" />,
-            items: [
-                'Kamasutra Shot',
-                'O-Shot',
-                'G-Shot',
-                'Hydration IV Drip'
-            ]
-        },
+
+        // D. PELVIC FLOOR REHABILITATION
         {
             title: 'Pelvic Floor Rehabilitation',
             icon: <FaRunning size={30} color="var(--primary)" />,
             items: [
-                'Bladder Oversensitivity',
-                'Voiding Dysfunction',
-                'Detrusor Overactivity',
-                'Stress Urinary Incontinence',
+                'Bladder hypersensitivity',
+                'Voiding dysfunction',
                 'Recurrent UTI',
-                'Dyspareunia (Painful Coitus)',
-                'Perineal & Pelvic Pain',
-                'Vaginal Laxity',
-                'Lower Abdominal Wall Laxity',
-                '1st Degree Pelvic Organ Prolapse',
-                'Anal Incontinence'
+                'Pelvic pain',
+                'Vaginal laxity',
+                'Pelvic organ prolapse',
+                'Anal incontinence'
+            ]
+        },
+
+        // E. FEMININE & SEXUAL WELLNESS
+        {
+            title: 'Feminine & Sexual Wellness',
+            icon: <FaVenusMars size={30} color="var(--primary)" />,
+            items: [
+                'Vulval rejuvenation',
+                'Vaginal rejuvenation',
+                'Cervical rejuvenation',
+                'O-shot',
+                'G-shot',
+                'Kamasutra shot'
+            ]
+        },
+
+        // F. COSMETIC & BODY AESTHETICS
+        {
+            title: 'Cosmetic & Body Aesthetics',
+            icon: <FaVenus size={30} color="var(--primary)" />,
+            items: [
+                'Mamma makeover',
+                'Vulval fillers',
+                'Labial fillers',
+                'Labial tightening',
+                'Intimate bleaching',
+                'Sclerotherapy'
             ]
         }
     ];
@@ -135,7 +259,7 @@ const ServicesGrid = () => {
     return (
         <section className="section" style={{ backgroundColor: 'transparent' }}>
             <div className="container">
-                <SectionTitle title="Comprehensive Care" subtitle="Our Specialized Services" />
+                <SectionTitle title="Our Complete Range of Services" subtitle="Medical Dermatology, Aesthetics & Intimate Wellness" />
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"

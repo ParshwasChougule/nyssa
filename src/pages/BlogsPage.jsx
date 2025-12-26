@@ -10,24 +10,32 @@ const BlogsPage = () => {
 
     const blogs = [
         {
-            title: "Understanding Vaginal Rejuvenation",
-            excerpt: "Explore the benefits and procedures involved in vaginal rejuvenation and how it can improve your quality of life.",
-            date: "October 15, 2023",
-            image: "/Vaginal-Rejuvenation.webp"
-        },
-        {
-            title: "Vaginal Tightening",
-            excerpt: "Restore tone and elasticity with our safe and effective vaginal tightening procedures, enhancing both comfort and confidence.",
-            date: "September 28, 2023",
-            image: "/Vaginal-Tightening.webp"
-        },
-        {
-            title: "Non-Surgical Solutions for Incontinence",
-            excerpt: "Discover effective non-surgical treatments for urinary incontinence that can help you regain confidence.",
-            date: "September 10, 2023",
+            title: "Why We Ignore Health Concerns and Why We Shouldn't",
+            excerpt: "Explore the psychological and social factors that lead us to delay seeking medical help, and understand why early intervention matters for your long-term health.",
             image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "When Is It Time to See a Doctor for Intimate Health Issues?",
+            excerpt: "Learn to recognize the signs and symptoms that indicate it's time to seek professional help for intimate health concerns, without fear or embarrassment.",
+            image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "Understanding Skin Changes: What's Normal and What's Not",
+            excerpt: "Discover how to differentiate between normal skin changes and those that require medical attention, empowering you to take charge of your skin health.",
+            image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "Post-Pregnancy Body Changes Nobody Talks About",
+            excerpt: "An honest discussion about the physical and emotional changes that occur after childbirth, and the support and treatments available to help you feel like yourself again.",
+            image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "How Stress Affects Skin, Hair and Overall Health",
+            excerpt: "Understand the profound impact stress has on your body, from hair loss to skin conditions, and learn practical strategies to manage stress for better health.",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
         }
     ];
+
 
     return (
         <div style={{ paddingTop: '100px' }}>
@@ -62,11 +70,11 @@ const BlogsPage = () => {
                             viewport={{ once: true }}
                         >
                             <CardSoft style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                <div style={{ width: '100%', overflow: 'hidden' }}>
+                                <div style={{ width: '100%', height: '250px', overflow: 'hidden' }}>
                                     <img
                                         src={blog.image}
                                         alt={blog.title}
-                                        style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.5s ease' }}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
                                         onMouseOver={(e) => e.target.style.transform = 'scale(1.1)'}
                                         onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
                                     />

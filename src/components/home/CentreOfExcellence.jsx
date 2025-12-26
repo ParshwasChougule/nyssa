@@ -1,53 +1,166 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SectionTitle from '../common/SectionTitle';
+import { FaHeart, FaUserMd, FaShieldAlt, FaUniversalAccess, FaHandHoldingMedical } from 'react-icons/fa';
 
 const CentreOfExcellence = () => {
+    const features = [
+        {
+            icon: <FaHeart />,
+            title: 'Calm Environment',
+            desc: 'A judgement-free space where you can relax.'
+        },
+        {
+            icon: <FaUserMd />,
+            title: 'Expert Care',
+            desc: 'Medical excellence delivered with empathy.'
+        },
+        {
+            icon: <FaShieldAlt />,
+            title: 'Complete Privacy',
+            desc: 'Discretion and confidentiality guaranteed.'
+        },
+        {
+            icon: <FaUniversalAccess />,
+            title: 'Inclusive Approach',
+            desc: 'Gender-neutral care respecting every identity.'
+        },
+        {
+            icon: <FaHandHoldingMedical />,
+            title: 'Ethical Treatments',
+            desc: 'Evidence-based procedures you can trust.'
+        }
+    ];
+
     return (
-        <section className="section" style={{ backgroundColor: 'var(--white)' }}>
+        <section className="section" style={{ backgroundColor: '#fff5f5', padding: '100px 0' }}>
             <div className="container">
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
-                    <motion.div
+                <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 60px' }}>
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                    >
-                        <span style={{
-                            color: 'var(--primary)',
-                            textTransform: 'uppercase',
-                            letterSpacing: '3px',
-                            fontWeight: '600',
-                            fontSize: '0.9rem',
-                            display: 'block',
-                            marginBottom: '20px'
-                        }}>
-                            Welcome to Nyssa
-                        </span>
-                        <h2 style={{
-                            fontSize: 'clamp(2rem, 4vw, 3rem)',
+                        style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
                             color: 'var(--secondary)',
                             fontFamily: 'var(--font-heading)',
-                            marginBottom: '30px',
-                            lineHeight: '1.3'
-                        }}>
-                            Centre of Excellence for <br />
-                            <span style={{ fontStyle: 'italic', color: 'var(--primary)' }}>Cosmetic Gynecology</span>
-                        </h2>
-                        <p style={{
-                            fontSize: '1.1rem',
+                            marginBottom: '20px',
+                            fontWeight: '700'
+                        }}
+                    >
+                        WHY NYSSA?
+                    </motion.h2>
+                    <motion.div
+                        initial={{ opacity: 0, width: 0 }}
+                        whileInView={{ opacity: 1, width: '100px' }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        style={{
+                            height: '3px',
+                            backgroundColor: 'var(--primary)',
+                            margin: '0 auto 30px'
+                        }}
+                    />
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        style={{
+                            fontSize: '1.2rem',
                             color: 'var(--text-light)',
-                            lineHeight: '1.8',
-                            marginBottom: '40px'
-                        }}>
-                            We are dedicated to empowering women by providing world-class aesthetic and functional treatments.
-                            Our clinic combines medical expertise with artistic precision to help you regain your confidence
-                            and embrace the best version of yourself. From non-surgical rejuvenation to advanced surgical procedures,
-                            we deliver results that speak for themselves.
-                        </p>
-                        <div style={{ width: '80px', height: '3px', backgroundColor: 'var(--primary)', margin: '0 auto' }}></div>
-                    </motion.div>
+                            lineHeight: '1.8'
+                        }}
+                    >
+                        At Nyssa, we understand that some health concerns are difficult to talk about. That hesitation is natural — and that's exactly where we begin.
+                    </motion.p>
                 </div>
+
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '30px',
+                    justifyContent: 'center'
+                }}>
+                    {features.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(181, 131, 131, 0.2)' }}
+                            style={{
+                                backgroundColor: 'var(--white)',
+                                padding: '40px 30px',
+                                borderRadius: '16px',
+                                textAlign: 'center',
+                                boxShadow: '0 5px 20px rgba(0,0,0,0.05)',
+                                border: '1px solid rgba(181, 131, 131, 0.1)',
+                                transition: 'all 0.3s ease'
+                            }}
+                        >
+                            <div style={{
+                                width: '70px',
+                                height: '70px',
+                                backgroundColor: '#fff0f0',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                margin: '0 auto 20px',
+                                color: 'var(--primary)',
+                                fontSize: '1.8rem'
+                            }}>
+                                {item.icon}
+                            </div>
+                            <h3 style={{
+                                fontSize: '1.25rem',
+                                color: 'var(--secondary)',
+                                marginBottom: '10px',
+                                fontFamily: 'var(--font-heading)',
+                                fontWeight: '600'
+                            }}>
+                                {item.title}
+                            </h3>
+                            <p style={{
+                                fontSize: '0.95rem',
+                                color: 'var(--text-light)',
+                                lineHeight: '1.6'
+                            }}>
+                                {item.desc}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    style={{
+                        textAlign: 'center',
+                        marginTop: '80px',
+                        padding: '40px',
+                        backgroundColor: 'rgba(181, 131, 131, 0.1)',
+                        borderRadius: '20px',
+                        maxWidth: '900px',
+                        marginLeft: 'auto',
+                        marginRight: 'auto'
+                    }}
+                >
+                    <p style={{
+                        fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
+                        color: 'var(--secondary)',
+                        fontFamily: 'var(--font-heading)',
+                        fontStyle: 'italic',
+                        marginBottom: '0',
+                        fontWeight: '500'
+                    }}>
+                        "Because healing starts when you feel safe enough to speak."
+                    </p>
+                </motion.div>
             </div>
         </section>
     );

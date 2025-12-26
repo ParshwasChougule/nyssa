@@ -2,9 +2,6 @@ import React, { useEffect } from 'react';
 import SectionTitle from '../components/common/SectionTitle';
 import ServicesGrid from '../components/home/ServicesGrid';
 
-import PatientJourney from '../components/home/PatientJourney';
-import FirstStep from '../components/home/FirstStep';
-
 const ServicesPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,16 +26,6 @@ const ServicesPage = () => {
             </div>
 
             <ServicesGrid />
-
-
-
-            <div style={{ marginTop: '100px' }}>
-                <PatientJourney />
-            </div>
-
-            <div style={{ marginTop: '80px' }}>
-                <FirstStep />
-            </div>
         </div>
     );
 };

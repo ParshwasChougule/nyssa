@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
-import SectionTitle from '../components/common/SectionTitle';
 import MeetSurgeon from '../components/home/MeetSurgeon';
-import Philosophy from '../components/home/Philosophy';
-import FeaturedMedia from '../components/home/FeaturedMedia';
+import BrandStory from '../components/home/BrandStory';
 
 const About = () => {
     useEffect(() => {
@@ -56,9 +54,7 @@ const About = () => {
 
             <MeetSurgeon />
 
-            <Philosophy />
-
-            <FeaturedMedia />
+            <BrandStory />
         </div>
     );
 };

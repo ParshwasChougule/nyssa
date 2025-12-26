@@ -129,12 +129,12 @@ const Navbar = () => {
             <nav style={navStyle}>
                 <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Link to="/" style={{ ...logoStyle, margin: '-10px 0' }} onClick={() => setMobileMenuOpen(false)}>
-                        <img src="/logo.png" alt="NYSSA" style={{ height: '70px', width: 'auto' }} />
+                        <img src="/logo copy.png" alt="NYSSA" style={{ height: '70px', width: 'auto' }} />
                     </Link>
 
                     {/* Desktop Menu */}
                     <div className="desktop-menu" style={{ display: 'flex', alignItems: 'center' }}>
-                        {['Home', 'About', 'Services', 'Clinics', 'Blogs', 'Contact'].map((item) => {
+                        {['Home', 'About', 'Services', 'Blogs', 'Contact'].map((item) => {
                             const path = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
                             return (
                                 <Link key={item} to={path} style={linkStyle}>
@@ -226,7 +226,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Overlay */}
                 <div style={mobileMenuStyle}>
-                    {['Home', 'About', 'Services', 'Clinics', 'Blogs', 'Contact'].map((item) => {
+                    {['Home', 'About', 'Services', 'Blogs', 'Contact'].map((item) => {
                         const path = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
                         return (
                             <Link key={item} to={path} onClick={() => setMobileMenuOpen(false)} style={{

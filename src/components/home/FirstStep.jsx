@@ -9,150 +9,476 @@ const FirstStep = () => {
             <div className="container">
                 <div className="split-section-container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
 
-                    {/* Left Content */}
-                    <div className="split-content-left" style={{ flex: '1 1 500px', paddingRight: '50px', marginBottom: '40px' }}>
+
+                    {/* Left Side - OUR VISION */}
+                    <div className="split-content-left" style={{ flex: '1 1 450px', paddingRight: '40px', marginBottom: '40px' }}>
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                                <span style={{
-                                    fontFamily: 'cursive',
-                                    color: 'var(--primary)',
-                                    fontSize: '1.2rem',
-                                    marginRight: '15px'
-                                }}>the</span>
-                                <h2 style={{
-                                    fontSize: '3.5rem',
-                                    fontFamily: 'var(--font-heading)',
-                                    color: 'var(--secondary)',
-                                    lineHeight: '1'
-                                }}>First Step</h2>
-                            </div>
-
-                            <h3 style={{
-                                fontSize: '2.5rem',
-                                fontWeight: '300',
-                                marginBottom: '20px',
-                                color: 'var(--secondary-light)'
+                            <h2 style={{
+                                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                                fontFamily: 'var(--font-heading)',
+                                color: 'var(--secondary)',
+                                marginBottom: '25px',
+                                fontWeight: '700'
                             }}>
-                                Towards being the <br />
-                                <span style={{ fontWeight: '600' }}>healthiest you</span>
-                            </h3>
+                                OUR VISION
+                            </h2>
 
                             <div style={{
                                 width: '60px',
-                                height: '2px',
-                                backgroundColor: 'var(--accent)',
+                                height: '3px',
+                                background: 'linear-gradient(90deg, var(--primary), #d4a5a5)',
                                 marginBottom: '30px'
                             }}></div>
 
                             <p style={{
-                                color: 'var(--primary)',
-                                fontStyle: 'italic',
-                                marginBottom: '40px',
-                                fontSize: '1.1rem'
+                                color: 'var(--text-light)',
+                                lineHeight: '1.8',
+                                fontSize: '1.15rem',
+                                marginBottom: '0'
                             }}>
-                                regain your confidence and youthful appearance
+                                To create a trusted space where people can talk openly about personal health — without fear, judgement, or discomfort.
                             </p>
-
-                            <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap' }}>
-                                <div style={{ flex: 1, minWidth: '250px' }}>
-                                    <p style={{ color: 'var(--text-light)', lineHeight: '1.8', marginBottom: '20px' }}>
-                                        Cosmetic Gynaecological procedures are a personal decision taken after much consideration. Nyssa Clinic provides personalized treatments that maintain the highest standard of excellence.
-                                    </p>
-
-                                    {/* Video Thumbnail Placeholder */}
-                                    <div style={{
-                                        width: '100%',
-                                        height: '180px',
-                                        backgroundColor: 'var(--secondary)', // Dark red/brown from image
-                                        borderRadius: '10px',
-                                        position: 'relative',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        cursor: 'pointer',
-                                        boxShadow: '0 10px 30px rgba(163, 51, 61, 0.3)'
-                                    }}>
-                                        <div style={{
-                                            width: '60px',
-                                            height: '60px',
-                                            borderRadius: '50%',
-                                            border: '2px solid white',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            color: 'white'
-                                        }}>
-                                            <FaPlay style={{ marginLeft: '4px' }} />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div style={{ flex: 1, minWidth: '250px' }}>
-                                    <p style={{ color: 'var(--text-light)', lineHeight: '1.8', marginBottom: '20px' }}>
-                                        With an accurate diagnosis and treatment plan that is tailored to their specific condition, each patient experiences safe and ethical treatments, conducted by pioneers in the industry.
-                                    </p>
-                                    <p style={{ color: 'var(--text-light)', lineHeight: '1.8', marginBottom: '30px' }}>
-                                        At Nyssa, we give you the freedom of choice, and knowledge, through counseling sessions. Right from your initial consultation to post-op check-ups.
-                                    </p>
-                                    <Link to="/services">
-                                        <button style={{
-                                            padding: '12px 30px',
-                                            border: '1px solid var(--secondary)',
-                                            background: 'transparent',
-                                            textTransform: 'uppercase',
-                                            letterSpacing: '1px',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.3s ease'
-                                        }}>
-                                            Explore
-                                        </button>
-                                    </Link>
-                                </div>
-                            </div>
                         </motion.div>
                     </div>
 
-                    {/* Right Image */}
-                    <div style={{ flex: '1 1 400px', position: 'relative' }}>
+                    {/* Right Side - OUR MISSION */}
+                    <div style={{ flex: '1 1 450px', position: 'relative' }}>
                         <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <img
-                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=988&q=80" // Dancer/Woman image
-                                alt="Healthiest You"
-                                style={{
-                                    width: '100%',
-                                    height: 'auto',
-                                    display: 'block',
-                                    filter: 'grayscale(100%) contrast(1.1)' // Black and white effect as per image
-                                }}
-                            />
-                            {/* Decorative Number */}
-                            <div style={{
-                                position: 'absolute',
-                                top: '50%',
-                                right: '-50px',
-                                transform: 'translateY(-50%)',
-                                fontSize: '15rem',
+                            <h2 style={{
+                                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
                                 fontFamily: 'var(--font-heading)',
-                                color: 'var(--primary)',
-                                opacity: '0.1',
-                                zIndex: -1,
-                                pointerEvents: 'none'
+                                color: 'var(--secondary)',
+                                marginBottom: '25px',
+                                fontWeight: '700'
                             }}>
-                                79
+                                OUR MISSION
+                            </h2>
+
+                            <div style={{
+                                width: '60px',
+                                height: '3px',
+                                background: 'linear-gradient(90deg, var(--primary), #d4a5a5)',
+                                marginBottom: '30px'
+                            }}></div>
+
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '18px'
+                            }}>
+                                {[
+                                    'Compassionate and judgement-free care',
+                                    'Medically sound and ethical treatment',
+                                    'Inclusive and respectful environment',
+                                    'Focus on long-term well-being'
+                                ].map((item, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'flex-start',
+                                            gap: '15px'
+                                        }}
+                                    >
+                                        <div style={{
+                                            width: '8px',
+                                            height: '8px',
+                                            borderRadius: '50%',
+                                            backgroundColor: 'var(--primary)',
+                                            flexShrink: 0,
+                                            marginTop: '8px'
+                                        }}></div>
+                                        <span style={{
+                                            fontSize: '1.1rem',
+                                            color: 'var(--text-light)',
+                                            lineHeight: '1.6'
+                                        }}>
+                                            {item}
+                                        </span>
+                                    </motion.div>
+                                ))}
                             </div>
                         </motion.div>
                     </div>
 
+
+                </div>
+
+                {/* SERVICES Section */}
+                <div style={{ marginTop: '80px' }}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                            fontFamily: 'var(--font-heading)',
+                            color: 'var(--secondary)',
+                            marginBottom: '60px',
+                            fontWeight: '700',
+                            textAlign: 'center'
+                        }}>
+                            SERVICES
+                        </h2>
+
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '40px'
+                        }}>
+                            {[
+                                {
+                                    title: 'Medical Dermatology',
+                                    items: [
+                                        'Acne and acne scar treatment',
+                                        'Pigmentation and melasma',
+                                        'Psoriasis, eczema and skin infections',
+                                        'Vitiligo and chronic skin conditions',
+                                        'Skin cancer screening',
+                                        'Mole, wart and cyst removal'
+                                    ]
+                                },
+                                {
+                                    title: 'Advanced Skin & Aesthetic Treatments',
+                                    items: [
+                                        'Chemical peels',
+                                        'PRP for skin rejuvenation',
+                                        'Microneedling',
+                                        'Botox and injectables',
+                                        'Laser treatments',
+                                        'Tattoo removal'
+                                    ]
+                                },
+                                {
+                                    title: 'Hair & Scalp Care',
+                                    items: [
+                                        'Hair fall treatment',
+                                        'PRP for hair regrowth',
+                                        'Alopecia management',
+                                        'Hair restoration therapies'
+                                    ]
+                                },
+                                {
+                                    title: 'Intimate & Pelvic Health Care',
+                                    items: [
+                                        'Vaginal dryness and laxity',
+                                        'Post-delivery recovery',
+                                        'Urinary incontinence',
+                                        'Pelvic floor rehabilitation',
+                                        'Cervical health concerns'
+                                    ]
+                                },
+                                {
+                                    title: 'Laser & Advanced Procedures',
+                                    items: [
+                                        'CO2 Laser',
+                                        'Nd:YAG Laser',
+                                        'Laser hair reduction',
+                                        'Skin rejuvenation',
+                                        'Scar and pigmentation treatments'
+                                    ]
+                                }
+                            ].map((service, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    style={{
+                                        padding: '30px',
+                                        backgroundColor: 'var(--white)',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                                        transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                                    }}
+                                    whileHover={{
+                                        transform: 'translateY(-5px)',
+                                        boxShadow: '0 8px 30px rgba(181, 131, 131, 0.15)'
+                                    }}
+                                >
+                                    <h3 style={{
+                                        fontSize: '1.3rem',
+                                        color: 'var(--secondary)',
+                                        marginBottom: '20px',
+                                        fontWeight: '700',
+                                        fontFamily: 'var(--font-heading)'
+                                    }}>
+                                        {service.title}
+                                    </h3>
+
+                                    <div style={{
+                                        width: '40px',
+                                        height: '3px',
+                                        background: 'linear-gradient(90deg, var(--primary), #d4a5a5)',
+                                        marginBottom: '20px'
+                                    }}></div>
+
+                                    <ul style={{
+                                        listStyle: 'none',
+                                        padding: 0,
+                                        margin: 0
+                                    }}>
+                                        {service.items.map((item, itemIndex) => (
+                                            <li key={itemIndex} style={{
+                                                display: 'flex',
+                                                alignItems: 'flex-start',
+                                                gap: '12px',
+                                                marginBottom: '12px',
+                                                color: 'var(--text-light)',
+                                                fontSize: '0.95rem',
+                                                lineHeight: '1.6'
+                                            }}>
+                                                <span style={{
+                                                    color: 'var(--primary)',
+                                                    fontSize: '1.2rem',
+                                                    lineHeight: '1',
+                                                    marginTop: '2px'
+                                                }}>•</span>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* ABOUT THE FOUNDER Section */}
+                <div style={{ marginTop: '100px' }}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                            fontFamily: 'var(--font-heading)',
+                            color: 'var(--secondary)',
+                            marginBottom: '60px',
+                            fontWeight: '700',
+                            textAlign: 'center'
+                        }}>
+                            ABOUT THE FOUNDER
+                        </h2>
+
+                        <div style={{
+                            display: 'flex',
+                            gap: '50px',
+                            flexWrap: 'wrap',
+                            alignItems: 'flex-start'
+                        }}>
+                            {/* Left Side - Bio */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                style={{ flex: '1 1 400px' }}
+                            >
+                                <h3 style={{
+                                    fontSize: 'clamp(1.8rem, 3vw, 2.2rem)',
+                                    fontFamily: 'var(--font-heading)',
+                                    color: 'var(--secondary)',
+                                    marginBottom: '15px',
+                                    fontWeight: '700'
+                                }}>
+                                    Dr. Monika Vijay Kullolli
+                                </h3>
+
+                                <div style={{
+                                    width: '80px',
+                                    height: '3px',
+                                    background: 'linear-gradient(90deg, var(--primary), #d4a5a5)',
+                                    marginBottom: '30px',
+                                    borderRadius: '2px'
+                                }}></div>
+
+                                <p style={{
+                                    fontSize: '1.1rem',
+                                    color: 'var(--text-light)',
+                                    lineHeight: '1.8',
+                                    marginBottom: '25px'
+                                }}>
+                                    Dr. Monika Kullolli is a senior Consultant Gynaecologist and Medical Superintendent with decades of experience in women's health, pelvic care, and advanced gynaecological procedures.
+                                </p>
+
+                                <p style={{
+                                    fontSize: '1.05rem',
+                                    color: 'var(--text-light)',
+                                    lineHeight: '1.8',
+                                    marginBottom: '0',
+                                    fontWeight: '500'
+                                }}>
+                                    She is the Head of the Department of OBG at Kullolli Institute of Health Services, Sangli.
+                                </p>
+                            </motion.div>
+
+                            {/* Right Side - Professional Highlights */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                style={{ flex: '1 1 400px' }}
+                            >
+                                <h4 style={{
+                                    fontSize: '1.4rem',
+                                    color: 'var(--secondary)',
+                                    marginBottom: '25px',
+                                    fontWeight: '700',
+                                    fontFamily: 'var(--font-heading)'
+                                }}>
+                                    Professional Highlights:
+                                </h4>
+
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '15px'
+                                }}>
+                                    {[
+                                        'Gold Medalist in Quality Management',
+                                        'Trained in Pelviscopy (Germany)',
+                                        'Specialist in Cosmetic Gynaecology & Pelvic Floor Care',
+                                        'Certified in Colposcopy, Ultrasound & OASIS Repair',
+                                        'International faculty for surgical workshops',
+                                        'Author of multiple research papers',
+                                        'Awarded for excellence in healthcare and social service'
+                                    ].map((highlight, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.5, delay: 0.1 + (index * 0.08) }}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'flex-start',
+                                                gap: '15px'
+                                            }}
+                                        >
+                                            <div style={{
+                                                width: '8px',
+                                                height: '8px',
+                                                borderRadius: '50%',
+                                                backgroundColor: 'var(--primary)',
+                                                flexShrink: 0,
+                                                marginTop: '8px'
+                                            }}></div>
+                                            <span style={{
+                                                fontSize: '1.05rem',
+                                                color: 'var(--text-light)',
+                                                lineHeight: '1.6'
+                                            }}>
+                                                {highlight}
+                                            </span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* BLOG IDEAS Section */}
+                <div style={{ marginTop: '100px' }}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                            fontFamily: 'var(--font-heading)',
+                            color: 'var(--secondary)',
+                            marginBottom: '60px',
+                            fontWeight: '700',
+                            textAlign: 'center'
+                        }}>
+                            BLOG IDEAS
+                        </h2>
+
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                            gap: '30px'
+                        }}>
+                            {[
+                                'Why We Ignore Health Concerns and Why We Shouldn\'t',
+                                'When Is It Time to See a Doctor for Intimate Health Issues?',
+                                'Understanding Skin Changes: What\'s Normal and What\'s Not',
+                                'Post-Pregnancy Body Changes Nobody Talks About',
+                                'How Stress Affects Skin, Hair and Overall Health'
+                            ].map((blog, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    style={{
+                                        padding: '30px 25px',
+                                        backgroundColor: 'var(--white)',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                                        borderLeft: '4px solid var(--primary)',
+                                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                        cursor: 'pointer'
+                                    }}
+                                    whileHover={{
+                                        transform: 'translateY(-5px)',
+                                        boxShadow: '0 8px 30px rgba(181, 131, 131, 0.15)'
+                                    }}
+                                >
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'flex-start',
+                                        gap: '15px'
+                                    }}>
+                                        <span style={{
+                                            fontSize: '1.5rem',
+                                            fontWeight: '700',
+                                            color: 'var(--primary)',
+                                            fontFamily: 'var(--font-heading)',
+                                            flexShrink: 0,
+                                            lineHeight: '1'
+                                        }}>
+                                            {index + 1}.
+                                        </span>
+                                        <h3 style={{
+                                            fontSize: '1.1rem',
+                                            color: 'var(--secondary)',
+                                            lineHeight: '1.6',
+                                            margin: 0,
+                                            fontWeight: '600'
+                                        }}>
+                                            {blog}
+                                        </h3>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
