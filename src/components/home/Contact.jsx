@@ -33,7 +33,7 @@ const Contact = () => {
             `━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
             `_Submitted via Nyssa Clinic Website_`;
 
-        const whatsappUrl = `https://wa.me/918149923900?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappUrl = `https://wa.me/919322667372?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappUrl, '_blank');
 
         setFormData({
