@@ -14,7 +14,7 @@ import BookAppointment from '../components/home/BookAppointment';
 
 
 
-import ImageMarquee from '../components/home/ImageMarquee';
+
 
 const Home = () => {
     const location = useLocation();
@@ -44,7 +44,7 @@ const Home = () => {
 
             {/* <Clinics />
             <Contact /> */}
-            <ImageMarquee />
+
         </>
     );
 };

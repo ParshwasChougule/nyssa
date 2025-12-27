@@ -3,6 +3,49 @@ import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
+    const [formData, setFormData] = React.useState({
+        name: '',
+        phone: '',
+        email: '',
+        maritalStatus: '',
+        city: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { name, phone, email, maritalStatus, city, message } = formData;
+
+        const whatsappMessage = ` *NYSSA CLINIC - Contact Form* \n` +
+            `━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+            ` *Contact Details*\n` +
+            ` Name: ${name}\n` +
+            ` Phone: ${phone}\n` +
+            ` Email: ${email}\n\n` +
+            ` *Additional Information*\n` +
+            ` Marital Status: ${maritalStatus || 'Not specified'}\n` +
+            ` City: ${city || 'Not specified'}\n\n` +
+            ` *Message*\n${message || 'No message provided'}\n\n` +
+            `━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+            `_Submitted via Nyssa Clinic Website_`;
+
+        const whatsappUrl = `https://wa.me/918149923900?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappUrl, '_blank');
+
+        setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            maritalStatus: '',
+            city: '',
+            message: ''
+        });
+    };
+
     return (
         <section className="section" style={{ backgroundColor: '#f9f9f9' }}>
             <div className="container">
@@ -159,7 +202,7 @@ const Contact = () => {
                             marginBottom: '30px',
                             fontWeight: '400'
                         }}>
-                            Rejuvenate the Woman Inside
+                            Share your concern here — and begin to heal within
                         </h3>
                         <div style={{
                             width: '100px',
@@ -186,12 +229,16 @@ const Contact = () => {
                     </div>
 
                     {/* Form */}
-                    <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                         {/* Row 1: Name and Phone */}
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Name*"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
                                 style={{
                                     padding: '18px 20px',
                                     border: '1px solid #e0e0e0',
@@ -207,7 +254,11 @@ const Contact = () => {
                             />
                             <input
                                 type="tel"
+                                name="phone"
                                 placeholder="Phone*"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
                                 style={{
                                     padding: '18px 20px',
                                     border: '1px solid #e0e0e0',
@@ -227,7 +278,11 @@ const Contact = () => {
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="E-mail*"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
                                 style={{
                                     padding: '18px 20px',
                                     border: '1px solid #e0e0e0',
@@ -243,7 +298,10 @@ const Contact = () => {
                             />
                             <input
                                 type="text"
+                                name="maritalStatus"
                                 placeholder="Marital Status*"
+                                value={formData.maritalStatus}
+                                onChange={handleChange}
                                 style={{
                                     padding: '18px 20px',
                                     border: '1px solid #e0e0e0',
@@ -259,27 +317,15 @@ const Contact = () => {
                             />
                         </div>
 
-                        {/* Row 3: Country and City */}
+
+                        {/* Row 3: City */}
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
                             <input
                                 type="text"
-                                placeholder="Your Country*"
-                                style={{
-                                    padding: '18px 20px',
-                                    border: '1px solid #e0e0e0',
-                                    borderRadius: '8px',
-                                    fontSize: '1rem',
-                                    color: 'var(--text-light)',
-                                    backgroundColor: '#f9f9f9',
-                                    outline: 'none',
-                                    transition: 'all 0.3s ease'
-                                }}
-                                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
-                                onBlur={(e) => e.target.style.borderColor = '#e0e0e0'}
-                            />
-                            <input
-                                type="text"
+                                name="city"
                                 placeholder="City*"
+                                value={formData.city}
+                                onChange={handleChange}
                                 style={{
                                     padding: '18px 20px',
                                     border: '1px solid #e0e0e0',
@@ -297,8 +343,11 @@ const Contact = () => {
 
                         {/* Message Field */}
                         <textarea
+                            name="message"
                             rows="6"
                             placeholder="Your Message"
+                            value={formData.message}
+                            onChange={handleChange}
                             style={{
                                 padding: '18px 20px',
                                 border: '1px solid #e0e0e0',

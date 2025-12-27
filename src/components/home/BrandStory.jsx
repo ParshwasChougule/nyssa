@@ -32,7 +32,7 @@ const BrandStory = () => {
     };
 
     const philosophy = {
-        title: 'Brand Philosophy',
+        title: 'Our Philosophy',
         tagline: '"Nyssa se kaho."',
         subtitle: 'This isn\'t just a line. It\'s a feeling.',
         meaning: [

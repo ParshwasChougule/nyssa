@@ -51,10 +51,10 @@ const Footer = () => {
 
 
     const socialLinks = [
-        { icon: <FaFacebookF />, key: 'fb' },
-        { icon: <FaInstagram />, key: 'ig' },
-        { icon: <FaLinkedinIn />, key: 'li' },
-        { icon: <FaYoutube />, key: 'yt' }
+        { icon: <FaFacebookF />, key: 'fb', url: 'https://www.facebook.com/profile.php?id=61584980792095' },
+        { icon: <FaInstagram />, key: 'ig', url: 'https://www.instagram.com/nyssa_health/?fbclid=IwY2xjawO8Z1VleHRuA2FlbQIxMQBicmlkETFJYzVqMnRJcmpMWmJWN2RDc3J0YwZhcHBfaWQBMAABHmB4x0SGawY4keoGNy4De6593RkHtyeeE2MJGtSXGIU1Tix-moVWfyJWcP4G_aem_bjkSpFruYMCZ66HHHQLd4Q' },
+        { icon: <FaLinkedinIn />, key: 'li', url: '#' },
+        { icon: <FaYoutube />, key: 'yt', url: '#' }
     ];
 
     return (
@@ -62,7 +62,7 @@ const Footer = () => {
             <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', margin: '0 auto', gap: '40px' }}>
 
                 {/* Brand Column */}
-                <div style={columnStyle}>
+                <div style={{ ...columnStyle, textAlign: 'left' }}>
                     <Link to="/" style={{ fontSize: '2rem', fontFamily: 'var(--font-heading)', color: 'var(--white)', textDecoration: 'none', display: 'block', marginBottom: '20px' }}>
                         NYSSA<span style={{ color: 'var(--primary)' }}>.</span>
                     </Link>
@@ -70,57 +70,56 @@ const Footer = () => {
                         Centre of Excellence for Cosmetic Gynecology. <br />
                         Empowering women through science, art, and compassionate care.
                     </p>
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '15px' }}>
                         {socialLinks.map((social) => (
-                            <motion.div
+                            <motion.a
                                 key={social.key}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 style={socialIconStyle}
                                 whileHover={{ backgroundColor: 'var(--primary)', borderColor: 'var(--primary)', color: '#000' }}
                             >
                                 <span style={{ fontSize: '1rem', display: 'flex' }}>{social.icon}</span>
-                            </motion.div>
+                            </motion.a>
                         ))}
                     </div>
                 </div>
 
                 {/* Treatments Column */}
-                <div style={columnStyle}>
+                <div style={{ ...columnStyle, textAlign: 'left' }}>
                     <h4 style={headingStyle}>Treatments</h4>
-                    <Link to="/services" style={linkStyle}>Vaginal Rejuvenation</Link>
-                    <Link to="/mommy-makeover" style={linkStyle}>Mommy Makeover</Link>
-                    <Link to="/services" style={linkStyle}>Labiaplasty</Link>
-                    <Link to="/services" style={linkStyle}>Hymenoplasty</Link>
-                    <Link to="/services" style={linkStyle}>O-Shot (PRP)</Link>
-                    <Link to="/services" style={linkStyle}>Laser Tightening</Link>
+                    <Link to="/services" style={linkStyle}>Medical Dermatology</Link>
+                    <Link to="/services" style={linkStyle}>Advanced Skin & Aesthetic Treatments</Link>
+                    <Link to="/services" style={linkStyle}>Hair & Scalp Care</Link>
+                    <Link to="/services" style={linkStyle}>Intimate & Pelvic Health Care</Link>
+                    <Link to="/services" style={linkStyle}>Laser & Advanced Procedures</Link>
                 </div>
 
                 {/* Patient Info Column */}
-                <div style={columnStyle}>
+                <div style={{ ...columnStyle, textAlign: 'left' }}>
                     <h4 style={headingStyle}>Patient Info</h4>
                     <Link to="/about" style={linkStyle}>About Dr. Monica</Link>
-                    <Link to="/clinics" style={linkStyle}>Our Clinics</Link>
                     <Link to="/contact" style={linkStyle}>Book Consultation</Link>
-                    <Link to="/contact" style={linkStyle}>International Patients</Link>
-                    <Link to="/contact" style={linkStyle}>Financing Options</Link>
                     <Link to="/contact" style={linkStyle}>Privacy Policy</Link>
                 </div>
 
                 {/* Contact Column */}
-                <div style={columnStyle}>
+                <div style={{ ...columnStyle, textAlign: 'left' }}>
                     <h4 style={headingStyle}>Contact Us</h4>
-                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
+                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'flex-start' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaMapMarkerAlt /></span>
-                        123 Wellness Ave, Beauty City, India
+                        Vinaya residency , 1st floor, Vishrambag, Sangli 416 415
                     </p>
-                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
+                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'flex-start' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaPhoneAlt /></span>
-                        +91 98765 43210
+                        +91 9322667372
                     </p>
-                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
+                    <p style={{ color: '#aaa', marginBottom: '15px', display: 'flex', justifyContent: 'flex-start' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaEnvelope /></span>
-                        info@nyssaclinic.com
+                        nyssahealth@gmail.com
                     </p>
-                    <p style={{ color: '#aaa', display: 'flex', justifyContent: 'center' }}>
+                    <p style={{ color: '#aaa', display: 'flex', justifyContent: 'flex-start' }}>
                         <span style={{ color: 'var(--primary)', marginRight: '10px', marginTop: '3px' }}><FaClock /></span>
                         Mon - Sat: 10:00 AM - 7:00 PM
                     </p>

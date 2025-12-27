@@ -7,7 +7,6 @@ const BookAppointment = () => {
         phone: '',
         email: '',
         maritalStatus: '',
-        country: '',
         city: '',
         message: ''
     });
@@ -18,16 +17,20 @@ const BookAppointment = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { name, phone, email, maritalStatus, country, city, message } = formData;
+        const { name, phone, email, maritalStatus, city, message } = formData;
 
-        const whatsappMessage = `*New Appointment Request*\n\n` +
-            `*Name:* ${name}\n` +
-            `*Phone:* ${phone}\n` +
-            `*Email:* ${email}\n` +
-            `*Marital Status:* ${maritalStatus}\n` +
-            `*Country:* ${country}\n` +
-            `*City:* ${city}\n` +
-            `*Message:* ${message}`;
+        const whatsappMessage = `NYSSA CLINIC - New Appointment Request\n` +
+            `━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+            ` *Patient Details*\n` +
+            ` Name: ${name}\n` +
+            ` Phone: ${phone}\n` +
+            ` Email: ${email}\n\n` +
+            ` *Additional Information*\n` +
+            ` Marital Status: ${maritalStatus || 'Not specified'}\n` +
+            ` City: ${city || 'Not specified'}\n\n` +
+            ` *Message*\n${message || 'No message provided'}\n\n` +
+            `━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+            `_Submitted via Nyssa Clinic Website_`;
 
         const whatsappUrl = `https://wa.me/918149923900?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappUrl, '_blank');
@@ -37,7 +40,6 @@ const BookAppointment = () => {
             phone: '',
             email: '',
             maritalStatus: '',
-            country: '',
             city: '',
             message: ''
         });
@@ -119,7 +121,7 @@ const BookAppointment = () => {
                             marginBottom: '30px',
                             lineHeight: '1.2'
                         }}>
-                            Rejuvenate the Woman <br /> Inside
+                            Share your concern here — and begin to heal within
                         </h2>
 
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '30px' }}>
@@ -174,16 +176,6 @@ const BookAppointment = () => {
                                     onFocus={focusStyle}
                                     onBlur={blurStyle}
                                     value={formData.maritalStatus}
-                                    onChange={handleChange}
-                                />
-                                <input
-                                    type="text"
-                                    name="country"
-                                    placeholder="Your Country*"
-                                    style={inputStyle}
-                                    onFocus={focusStyle}
-                                    onBlur={blurStyle}
-                                    value={formData.country}
                                     onChange={handleChange}
                                 />
                                 <input

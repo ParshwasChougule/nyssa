@@ -227,7 +227,7 @@ const ServicesGrid = () => {
             title: 'Cosmetic & Body Aesthetics',
             icon: <FaVenus size={30} color="var(--primary)" />,
             items: [
-                'Mamma makeover',
+                'Mumma makeover',
                 'Vulval fillers',
                 'Labial fillers',
                 'Labial tightening',

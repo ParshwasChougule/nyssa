@@ -161,6 +161,149 @@ const CentreOfExcellence = () => {
                         "Because healing starts when you feel safe enough to speak."
                     </p>
                 </motion.div>
+
+                {/* SERVICES Section */}
+                <div style={{ marginTop: '100px' }}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                            fontFamily: 'var(--font-heading)',
+                            color: 'var(--secondary)',
+                            marginBottom: '60px',
+                            fontWeight: '700',
+                            textAlign: 'center'
+                        }}>
+                            SERVICES
+                        </h2>
+
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '40px'
+                        }}>
+                            {[
+                                {
+                                    title: 'Medical Dermatology',
+                                    items: [
+                                        'Acne and acne scar treatment',
+                                        'Pigmentation and melasma',
+                                        'Psoriasis, eczema and skin infections',
+                                        'Vitiligo and chronic skin conditions',
+                                        'Skin cancer screening',
+                                        'Mole, wart and cyst removal'
+                                    ]
+                                },
+                                {
+                                    title: 'Advanced Skin & Aesthetic Treatments',
+                                    items: [
+                                        'Chemical peels',
+                                        'PRP for skin rejuvenation',
+                                        'Microneedling',
+                                        'Botox and injectables',
+                                        'Laser treatments',
+                                        'Tattoo removal'
+                                    ]
+                                },
+                                {
+                                    title: 'Hair & Scalp Care',
+                                    items: [
+                                        'Hair fall treatment',
+                                        'PRP for hair regrowth',
+                                        'Alopecia management',
+                                        'Hair restoration therapies'
+                                    ]
+                                },
+                                {
+                                    title: 'Intimate & Pelvic Health Care',
+                                    items: [
+                                        'Vaginal dryness and laxity',
+                                        'Post-delivery recovery',
+                                        'Urinary incontinence',
+                                        'Pelvic floor rehabilitation',
+                                        'Cervical health concerns'
+                                    ]
+                                },
+                                {
+                                    title: 'Laser & Advanced Procedures',
+                                    items: [
+                                        'CO2 Laser',
+                                        'Nd:YAG Laser',
+                                        'Laser hair reduction',
+                                        'Skin rejuvenation',
+                                        'Scar and pigmentation treatments'
+                                    ]
+                                }
+                            ].map((service, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    style={{
+                                        padding: '30px',
+                                        backgroundColor: 'var(--white)',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                                        transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                                    }}
+                                    whileHover={{
+                                        transform: 'translateY(-5px)',
+                                        boxShadow: '0 8px 30px rgba(181, 131, 131, 0.15)'
+                                    }}
+                                >
+                                    <h3 style={{
+                                        fontSize: '1.3rem',
+                                        color: 'var(--secondary)',
+                                        marginBottom: '20px',
+                                        fontWeight: '700',
+                                        fontFamily: 'var(--font-heading)'
+                                    }}>
+                                        {service.title}
+                                    </h3>
+
+                                    <div style={{
+                                        width: '40px',
+                                        height: '3px',
+                                        background: 'linear-gradient(90deg, var(--primary), #d4a5a5)',
+                                        marginBottom: '20px'
+                                    }}></div>
+
+                                    <ul style={{
+                                        listStyle: 'none',
+                                        padding: 0,
+                                        margin: 0
+                                    }}>
+                                        {service.items.map((item, itemIndex) => (
+                                            <li key={itemIndex} style={{
+                                                display: 'flex',
+                                                alignItems: 'flex-start',
+                                                gap: '12px',
+                                                marginBottom: '12px',
+                                                color: 'var(--text-light)',
+                                                fontSize: '0.95rem',
+                                                lineHeight: '1.6'
+                                            }}>
+                                                <span style={{
+                                                    color: 'var(--primary)',
+                                                    fontSize: '1.2rem',
+                                                    lineHeight: '1',
+                                                    marginTop: '2px'
+                                                }}>•</span>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
