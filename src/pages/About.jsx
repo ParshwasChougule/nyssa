@@ -33,13 +33,10 @@ const About = () => {
                             Our Story
                         </h2>
                         <p style={{ fontSize: '1.1rem', color: 'var(--text-light)', lineHeight: '1.8', marginBottom: '20px' }}>
-                            Nyssa Clinic was founded with a singular vision: to create a safe, empowering space where women can address their intimate health and aesthetic concerns without judgment.
-                        </p>
-                        <p style={{ fontSize: '1.1rem', color: 'var(--text-light)', lineHeight: '1.8', marginBottom: '20px' }}>
-                            Under the leadership of Dr. Monica Kullolli, we have grown into a centre of excellence, known for our pioneering techniques in cosmetic gynecology and our unwavering commitment to patient care.
+                            Nyssa was created with a simple thought in mind — that many people live with small discomforts, changes, or doubts without realising that these are signs their body is asking for care. Often, these things are ignored because they feel "too small," "too awkward," or "not serious enough." At Nyssa, we understand this silence. We know that most people don't avoid care because they don't care — they avoid it because they don't feel comfortable talking about it.
                         </p>
                         <p style={{ fontSize: '1.1rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
-                            We believe that every woman deserves to feel confident and comfortable in her own body. Our holistic approach ensures that we treat not just the physical symptoms, but the whole woman.
+                            That's where Nyssa comes in. We believe healing begins the moment someone feels safe enough to speak. Our space is built on listening, understanding, and gentle guidance. We help people recognise what their body is trying to tell them and support them with care that is respectful, thoughtful, and never rushed. Because when you feel heard, supported, and understood, healing doesn't feel intimidating — it begins naturally, from within.
                         </p>
                     </div>
                     <div style={{ flex: 1, minWidth: '300px' }}>
